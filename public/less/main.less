@@ -3,8 +3,12 @@
 @white:#f0f0f0;
 @baseCl:#999;
 @wrap-wid:1000px;
+@wrap-borderWid:15px;
 @spacing:20px;
 @inp-hgt:30px;
+.wrap-border{
+	border:@wrap-borderWid solid @mainCl;
+}
 body {
 	color: @baseCl;
 }
@@ -44,7 +48,7 @@ input {
 	width: @wrap-wid;
 	margin: 30px auto 0;
 	padding: @spacing;
-	border:10px solid @mainCl;
+	.wrap-border();
 	.manager-hd {
 		background: @bgCl;
 		border-bottom: 2px solid #f0f0f0;
@@ -182,7 +186,7 @@ input {
 		color: @baseCl;
 		.pop-inner {
 			position: absolute;
-			border:10px solid @mainCl;
+			.wrap-border();
 			@wid:(@wrap-wid+@spacing*2)/2;
 			background: #fff;
 			width: @wid;

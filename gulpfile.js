@@ -8,5 +8,6 @@ gulp.task('less',function(){
 })
 
 gulp.task('watch',function(){
-	gulp.watch('./public/less/main.less',['less'])
+	gulp.watch('./public/less/main.less',['less']);
+	console.log('css同步完成')
 })

@@ -26,7 +26,7 @@ input {
   width: 1000px;
   margin: 30px auto 0;
   padding: 20px;
-  border: 10px solid skyblue;
+  border: 20px solid skyblue;
 }
 .wrap .manager-hd {
   background: #f8f8f8;
@@ -198,7 +198,7 @@ input {
 }
 .wrap .pop-add-students .pop-inner {
   position: absolute;
-  border: 10px solid skyblue;
+  border: 20px solid skyblue;
   background: #fff;
   width: 520px;
   height: 250px;
