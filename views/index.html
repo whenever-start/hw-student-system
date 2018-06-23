@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>学生信息管理系统(simple)</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
+	<script type="text/javascript" src="javascripts/ajax.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<!-- 增删改 -->
+		<div class="manager-hd cf">
+			<div class="manager-name">Students</div>
+			<div class="manager-operating">
+				<button class="btn-add" id="btn-add_student">添加</button>
+				<button class="btn-edit">编辑</button>
+				<button class="btn-del" id="btn-del_student">删除</button>
+			</div>
+		</div>
+		<!-- 查 -->
+		<div class="mod-search">
+			<div class="search-box cf">
+				<div class="search-box-left cf">
+					<input class="search-inp" type="text" id="serach_inp" name="">
+					<button class="search-btn" id="search_btn">搜索</button>
+					<button class="search-all" id="search-query_all">查询全部</button>
+				</div>
+				<button class="search-advanced" id="advanced_query">高级搜索</button>
+			</div>
+		</div>
+		
+		<!-- results -->
+		<div class="mod-results">
+			<table id="manager_table" class="manager-table">
+				<thead>
+					<tr>
+						<th class="th-index">序号</th>
+						<th class="th-select-all"><label id="checkbox-select_all-parent">全选<input type="checkbox" name="" id="checkbox-select_all"></label></th>
+						<th>姓名</th>
+						<th>年龄</th>
+						<th>性别</th>
+						<th>班级</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td colspan="6" class="mod-page">
+							<ul id="manager_table_page" class="page-num cf"></ul>
+						</td>
+					</tr>
+				</tfoot>
+				<tbody></tbody>
+			</table>
+		</div>
+		<!-- tips -->
+		<div class="tips">请在搜索框输入姓名查询，如需更多查询条件请点击高级搜索！</div>
+		<!-- 弹窗 高级搜索 -->
+		<div class="pop-advanced_query">
+			<div class="pop-inner">
+				<div class="fill-form">
+					<div class="item cf">
+						<div class="item-name">姓名：</div>
+						<input type="text" name="" id="query_name">
+					</div>
+					<div class="item cf">
+						<div class="item-name">年龄：</div>
+						<input type="text" name="" id="query_age">
+					</div>
+					<div class="item cf">
+						<div class="item-name">性别：</div>
+						<div class="sex-radio-wrap" id="query_sex">
+							<label><input type="radio" name="stu_sex" checked><span>全选</span></label>
+							<label><input type="radio" name="stu_sex"><span>男</span></label>
+							<label><input type="radio" name="stu_sex"><span>女</span></label>
+						</div>
+					</div>
+					<div class="item cf">
+						<div class="item-name">班级：</div>
+						<select class="class-selct" id="query_class">
+							<option>不限</option>
+							<option>一年级1班</option>
+							<option>二年级1班</option>
+						</select>
+					</div>
+					<div class="pop-btn-wrap">
+						<button class="pop-btn-confirm" id="advanced_query-confirm">高级搜索</button>
+						<button class="pop-btn-cancel" id="advanced_query-cancel">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 弹窗 高级搜索 end -->
+		<!-- 弹窗 添加 -->
+		<div class="pop-add-students" id="pop-add_students">
+			<div class="pop-inner">
+				<div class="fill-form">
+					<div class="item cf">
+						<div class="item-name">姓名：</div>
+						<input type="text" name="" id="add_name">
+					</div>
+					<div class="item cf">
+						<div class="item-name">年龄：</div>
+						<input type="text" name="" id="add_age">
+					</div>
+					<div class="item cf">
+						<div class="item-name">性别：</div>
+						<div class="sex-radio-wrap" id="add_sex">
+							<label><input type="radio" name="stu_sex" checked><span>全选</span></label>
+							<label><input type="radio" name="stu_sex"><span>男</span></label>
+							<label><input type="radio" name="stu_sex"><span>女</span></label>
+						</div>
+					</div>
+					<div class="item cf">
+						<div class="item-name">班级：</div>
+						<select class="class-selct" id="add_class">
+							<option>一年级1班</option>
+							<option>二年级1班</option>
+						</select>
+					</div>
+					<div class="pop-btn-wrap">
+						<button class="pop-btn-confirm" id="pop-add-confirm">确定</button>
+						<button class="pop-btn-cancel" id="pop-add-cancel">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 弹窗 添加 end-->
+	</div>
+</body>
+</html>

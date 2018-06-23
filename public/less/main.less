@@ -1,0 +1,235 @@
+@mainCl:skyblue;
+@bgCl:#f8f8f8;
+@white:#f0f0f0;
+@baseCl:#999;
+@wrap-wid:1000px;
+@spacing:20px;
+@inp-hgt:30px;
+body {
+	color: @baseCl;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.cf:after {
+	content: '';
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+input {
+	box-sizing: border-box;
+}
+// button
+.btn(@wid,@bg,@fontCl) {
+	width: @wid;
+	height: @inp-hgt;
+	background: @bg;
+	color: @fontCl;
+	border-radius: 8px;
+	cursor: pointer;
+	outline: none;
+}
+
+.wrap{
+	position: relative;
+	width: @wrap-wid;
+	margin: 30px auto 0;
+	padding: @spacing;
+	border:10px solid @mainCl;
+	.manager-hd {
+		background: @bgCl;
+		border-bottom: 2px solid #f0f0f0;
+		padding: 0 @spacing;
+		.manager-name {
+			.fl;
+			line-height: 46px;
+		}
+		.manager-operating {
+			.fr;
+			button {
+				margin: 0 5px;
+			}
+			.btn-add {
+				.btn(130px,@mainCl,@white);
+			}
+			.btn-edit {
+				.btn(60px,@white,@baseCl);
+			}
+			.btn-del {
+				.btn(60px,@white,@baseCl);
+			}
+		}
+	}
+	.mod-search {
+		background: @bgCl;
+		padding: 2*@spacing @spacing;
+		.search-box-left {
+			.fl;
+			.search-inp {
+				.fl;
+				width: 250px;
+				height: @inp-hgt;
+				padding-left: 10px;
+				border:1px solid @mainCl;
+			}
+			.search-btn {
+				.fl;
+				.btn(60px,@mainCl,@white);
+			}
+			.search-all {
+				.fl;
+				.btn(100px,@white,@baseCl);
+			}
+		}
+		.search-advanced {
+			.fr;
+			.btn(100px,@white,@baseCl);
+		}
+	}
+	.tips {
+		margin-top: @spacing;
+		line-height: 36px;
+		background: #d3edf8;
+		color: #ff3333;
+		padding: 0 @spacing;
+	}
+	.mod-results {
+		@cellWid:120px;
+		@cellHgt:40px;
+		@borderCl:#f0f0f0;
+		margin-top: 2*@spacing;
+		.manager-table {
+			border: 1px solid @borderCl;
+			border-collapse:collapse;
+			color: #3079ff;
+			margin: 0 auto;
+			th {
+				border: 1px solid @borderCl;
+				background: @mainCl;
+				color: @white;
+				width: @cellWid;
+				height: @cellHgt;
+			}
+			tbody td {
+				border: 1px solid @borderCl;
+				height: @cellHgt;
+				text-align: center;
+				padding: 0;
+			}
+			.th-select-all {
+				width: 60px;
+				input {
+					margin-left: 8px;
+				}
+			}
+			.th-index {
+				width: 60px;
+			}
+			.mod-page {
+				text-align: center;
+				.page-num {
+					margin: 10px auto;
+					color: @baseCl;
+					&>li {
+						.fl;
+						width: 10px;
+						text-align: center;
+						margin: 0 5px;
+					}
+					&>li.cur {
+						color: @mainCl;
+					}
+				}
+			}
+		}
+	}
+	// 弹窗 高级搜索
+	.pop-advanced_query {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 280px;
+		background: @bgCl;
+		color: @baseCl;
+		.pop-inner {
+			position: absolute;
+			width: @wrap-wid - 200;
+			height: 100%;
+			left: 0;
+			top: 0;
+			margin-left: 100px;
+		}
+	}
+	.pop-add-students {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.1);
+		color: @baseCl;
+		.pop-inner {
+			position: absolute;
+			border:10px solid @mainCl;
+			@wid:(@wrap-wid+@spacing*2)/2;
+			background: #fff;
+			width: @wid;
+			height: 250px;
+			left:50%;
+			top: 50%;
+			margin-left: -@wid/2;
+			margin-top: -125px;
+		}
+	}
+	.pop-inner {
+		.fill-form {
+			.item {
+				margin: @spacing 0;
+				.item-name {
+					.fl;
+					margin-right: 20px;
+					width: 100px;
+					line-height: @inp-hgt;
+					text-align: right;
+				}
+				input[type='text'] {
+					.fl;
+					width: 250px;
+					height: @inp-hgt;
+					padding-left: 10px;
+				}
+				.sex-radio-wrap {
+					.fl;
+					label {
+						margin: 0 10px;
+						line-height: @inp-hgt;
+					}
+				}
+				.class-select {
+					.fl;
+				}
+			}
+			.pop-btn-wrap {
+				margin-left: 120px;
+				.pop-btn-confirm {
+					.btn(100px,@mainCl,@white);
+				}
+				.pop-btn-cancel {
+					.btn(60px,@white,@baseCl);
+				}
+			}
+		}
+	}
+}
